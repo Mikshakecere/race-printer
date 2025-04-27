@@ -40,21 +40,3 @@ print(banners)
 print("Relic Tiles:")
 print("Counted " + str(len(relics)) + " tiles")
 print(relics)
-
-# counter = 0
-# target_ct = {}
-
-# while (ct == {}):
-#     print("Search for race using name: ")
-#     name = input().lower()
-
-#     for ct in ct_resp['body']:
-#         if ct['id'].lower() == name:
-#             ct_id = ct['id']
-#             target_ct = ct
-#             break
-
-#     if target_ct == {}:
-#         # eventually put this all in a while loop so you just continue trying again but yeah
-#         print("Couldn't find the target race, please try again")
-
