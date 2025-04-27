@@ -6,7 +6,7 @@ url = "https://data.ninjakiwi.com/btd6/ct/"
 ct_resp = requests.get(url).json()
 
 if ct_resp['error'] is not None or ct_resp['success'] is False:
-    print("Races category unavailable at the moment")
+    print("CT category unavailable at the moment")
     exit()
 
 ct_id = input("Input the ct id or type 0 to fetch the latest ct: ")
@@ -14,8 +14,6 @@ ct_id = input("Input the ct id or type 0 to fetch the latest ct: ")
 if ct_id == '0':
     # fetch the latest ct id (i forgor how)
     ct_id = ct_resp['body'][0]['id']
-
-print(ct_id)
 
 ct = url + ct_id + "/tiles"
 ct_resp = requests.get(ct).json()
@@ -32,6 +30,10 @@ for tile in tiles:
             banners.append(tile['id'])
         else:
             relics.append(tile['id'])
+
+banners.sort()
+relics.sort()
+regular.sort()
 
 print("Regular Tiles:")
 print("Counted " + str(len(regular)) + " tiles")
