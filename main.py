@@ -11,9 +11,11 @@ if ct_resp['error'] is not None or ct_resp['success'] is False:
 
 ct_id = input("Input the ct id or type 0 to fetch the latest ct: ")
 
-if ct_id == 0:
+if ct_id == '0':
     # fetch the latest ct id (i forgor how)
     ct_id = ct_resp['body'][0]['id']
+
+print(ct_id)
 
 ct = url + ct_id + "/tiles"
 ct_resp = requests.get(ct).json()
